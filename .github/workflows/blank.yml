@@ -1,0 +1,21 @@
+name: matrix strategy
+on:
+ push:
+  branches:
+   -main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Run the echo
+       run: echo "This is my first matrix strategy"
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12, 14, 16]
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
