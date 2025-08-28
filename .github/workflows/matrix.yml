@@ -2,7 +2,7 @@ name: matrix strategy
 on:
  push:
   branches:
-   -main
+   -matrix
 jobs:
   test:
     name: build node version ${{ matrix.node-version }}
