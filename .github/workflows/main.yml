@@ -6,8 +6,15 @@ on:
       - main
 
 jobs:
-  print:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Print a name
         run: echo "Hello from print-name workflow!"
+  test:
+    needs: build
+    steps:
+      - name: Testing the verfiy
+        run: echo "Testing done"
+  
+   
