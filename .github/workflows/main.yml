@@ -13,6 +13,7 @@ jobs:
         run: echo "Hello from print-name workflow!"
   test:
     needs: build
+    runs-on: ubuntu-latest
     steps:
       - name: Testing the verfiy
         run: echo "Testing done"
