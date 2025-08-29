@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Print a name
         run: echo "Hello from print-name workflow!"
+      - name: who triggred this
+        run: echo "I am ${{github.actor}}"
   test:
     needs: build
     runs-on: ubuntu-latest
