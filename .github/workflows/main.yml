@@ -2,8 +2,8 @@ name: print-name
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      -README.md
 
 jobs:
   build:
