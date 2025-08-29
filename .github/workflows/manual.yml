@@ -1,0 +1,22 @@
+name: Manual Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      region:
+        description: 'Target region for deployment'
+        required: true
+        default: 'us-east-1'
+      image:
+        description: 'Docker image to deploy'
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Deploy Application
+        run: |
+          echo "Deploying image ${{ github.event.inputs.image }} to region ${{ github.event.inputs.region }}"
